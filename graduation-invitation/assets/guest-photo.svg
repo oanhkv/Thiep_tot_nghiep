@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750">
+<rect width="600" height="750" fill="#e9dfcf"/>
+<circle cx="300" cy="250" r="120" fill="#d3b99a"/>
+<path d="M180 245 Q300 115 420 245 L400 330 Q300 390 200 330Z" fill="#3d4148"/>
+<path d="M140 730 Q155 470 300 430 Q445 470 460 730Z" fill="#343a40"/>
+<path d="M230 455 L370 455 L405 730 L195 730Z" fill="#fffaf1"/>
+<path d="M165 730 L190 530 L250 500 L220 730Z" fill="#262d33"/>
+<path d="M435 730 L410 530 L350 500 L380 730Z" fill="#262d33"/>
+<text x="300" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="27" fill="#6b5846">YOUR PHOTO HERE</text>
+<text x="300" y="700" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#6b5846">Thay ảnh tại assets/guest-photo.svg</text>
+</svg>

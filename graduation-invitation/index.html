@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lời Mời Lễ Tốt Nghiệp | Vũ Kiều Oanh</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <!-- SECTION 1: INTRO -->
+    <section class="section-intro">
+      <div class="intro-content fade-in">
+        <p class="intro-text">Bạn được mời tham dự</p>
+        <h1 class="title-main">Lễ Tốt Nghiệp</h1>
+        <p class="subtitle-text">của</p>
+        <div class="scroll-hint">↓ Scroll xuống ↓</div>
+      </div>
+      <div class="floating-elements">
+        <span class="float-icon">🎓</span>
+        <span class="float-icon">✨</span>
+        <span class="float-icon">💝</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LOGO & TRƯỜNG -->
+    <section class="section-school slide-up">
+      <div class="school-container">
+        <div class="school-logo">🎓</div>
+        <h2 class="school-name">Đại Học Công Nghệ Đông Á</h2>
+        <p class="school-program">Kỹ Sư Công Nghệ Thông Tin</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TÊN NGƯỜI TỐT NGHIỆP -->
+    <section class="section-name slide-up">
+      <div class="name-container">
+        <div class="name-decoration">✦</div>
+        <h2 class="graduate-name-large">Vũ Kiều Oanh</h2>
+        <div class="name-decoration">✦</div>
+      </div>
+      <p class="year-text">Khóa 2022 - 2026</p>
+    </section>
+
+    <!-- SECTION 4: GALLERY ẢNH (FILMSTRIP) -->
+    <section class="section-gallery slide-up">
+      <div class="gallery-container">
+        <div class="gallery-label">Kỷ Niệm</div>
+        <div class="filmstrip-wrapper">
+          <div class="filmstrip">
+            <div class="filmstrip-item">
+              <img src="assets/oanh-photo.jpg" alt="Ảnh 1" />
+            </div>
+            <div class="filmstrip-item">
+              <img src="assets/oanh-photo-2.jpg" alt="Ảnh 2" />
+            </div>
+            <div class="filmstrip-item">
+              <img src="assets/oanh-photo-3.jpg" alt="Ảnh 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SASH & TÊN KHÁCH -->
+    <section class="section-sash slide-up">
+      <div class="sash-container">
+        <div class="sash-ribbon">
+          <div class="sash-top">
+            <span class="sash-icon">🎓</span>
+          </div>
+          <div class="sash-middle">
+            <div class="sash-photo">
+              <img src="assets/oanh-photo.jpg" alt="Ảnh tốt nghiệp" />
+            </div>
+            <div class="sash-info">
+              <p class="sash-label">Thân Mời</p>
+              <input type="text" id="guestNameDisplay" class="guest-name-input" placeholder="Nhập tên của bạn..." maxlength="30">
+              <p class="sash-label-2">Đến Dự Buổi Lễ</p>
+            </div>
+          </div>
+          <div class="sash-bottom">
+            <span class="sash-icon">✨</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: THÔNG TIN SỰ KIỆN -->
+    <section class="section-event slide-up">
+      <div class="event-content">
+        <h3 class="event-title">Ngày & Giờ Lễ Tốt Nghiệp</h3>
+
+        <div class="event-details">
+          <div class="event-detail-item">
+            <span class="detail-icon">📅</span>
+            <div>
+              <p class="detail-label">Ngày</p>
+              <p class="detail-value" id="eventDate">Thứ Bảy, 03 Tháng 10, 2026</p>
+            </div>
+          </div>
+
+          <div class="event-detail-item">
+            <span class="detail-icon">🕐</span>
+            <div>
+              <p class="detail-label">Giờ</p>
+              <p class="detail-value" id="eventTime">13:30 – 14:30</p>
+            </div>
+          </div>
+
+          <div class="event-detail-item">
+            <span class="detail-icon">📍</span>
+            <div>
+              <p class="detail-label">Địa Điểm</p>
+              <p class="detail-value" id="eventVenue">Hội Trường Tầng 6</p>
+              <p class="detail-subvalue" id="eventAddress">Tòa VNB, Trường ĐH Công Nghệ Đông Á</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" id="mapLink" class="btn-map">📍 Xem Bản Đồ</a>
+      </div>
+    </section>
+
+    <!-- SECTION 7: COUNTDOWN -->
+    <section class="section-countdown slide-up">
+      <h3 class="countdown-title">Còn Lại</h3>
+      <div class="countdown-grid" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-value" id="days">00</div>
+          <div class="countdown-label">Ngày</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="hours">00</div>
+          <div class="countdown-label">Giờ</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="minutes">00</div>
+          <div class="countdown-label">Phút</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="seconds">00</div>
+          <div class="countdown-label">Giây</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RSVP FORM -->
+    <section class="section-rsvp slide-up">
+      <div class="rsvp-content">
+        <h3 class="rsvp-title">Xác Nhận Tham Dự</h3>
+        <p class="rsvp-subtitle">Sự hiện diện của bạn là niềm vui to lớn! 💝</p>
+
+        <form id="rsvpForm" class="rsvp-form">
+          <div class="form-group">
+            <label for="guestInput">Họ và Tên</label>
+            <input id="guestInput" name="guest" type="text" placeholder="Nhập tên của bạn..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="attendanceInput">Bạn sẽ tham dự?</label>
+            <select id="attendanceInput" name="attendance" required>
+              <option value="">-- Vui lòng chọn --</option>
+              <option value="Có tham dự">✓ Chắc chắn rồi! 🎉</option>
+              <option value="Chưa chắc">? Chưa chắc lắm 🥺</option>
+              <option value="Không tham dự">✗ Tiếc quá, không đến được 😭</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="receivedInput">Ngày nhận thiệp</label>
+            <input id="receivedInput" name="received" type="date">
+          </div>
+
+          <div class="form-group">
+            <label for="wishInput">Lời Chúc (tuỳ chọn)</label>
+            <textarea id="wishInput" name="wish" rows="4" placeholder="Gửi lời chúc ấm áp đến Oanh..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Gửi Xác Nhận 💌</button>
+          <p class="form-message" id="formMessage"></p>
+        </form>
+
+        <div class="wishes-section">
+          <h4>💌 Lời Chúc Từ Bạn Bè</h4>
+          <div id="wishesList" class="wishes-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CLOSING -->
+    <section class="section-closing slide-up">
+      <div class="closing-content">
+        <p class="closing-quote">"Một chương thanh xuân khép lại,<br>một hành trình mới bắt đầu."</p>
+        <p class="closing-text">Hẹn gặp bạn ngày 03/10/2026! 🎓✨</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <p>Thiệp mời điện tử · Vũ Kiều Oanh · Lễ Tốt Nghiệp 2026</p>
+      <p><a href="#" id="backToTop">↑ Lên đầu trang ↑</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
