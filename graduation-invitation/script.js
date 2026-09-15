@@ -86,6 +86,72 @@ function loadWishes() {
 
 loadWishes();
 
+// Reveal sections as the guest explores the invitation.
+const revealSections = document.querySelectorAll(".slide-up");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.16 });
+
+  revealSections.forEach((section) => revealObserver.observe(section));
+} else {
+  revealSections.forEach((section) => section.classList.add("is-visible"));
+}
+
+// Keep the atmosphere moving without adding heavy assets.
+function createSparkle() {
+  const sparkle = document.createElement("span");
+  sparkle.className = "sparkle";
+  sparkle.style.left = `${Math.random() * 100}vw`;
+  sparkle.style.setProperty("--drift", `${(Math.random() - 0.5) * 160}px`);
+  sparkle.style.setProperty("--duration", `${5 + Math.random() * 5}s`);
+  document.body.appendChild(sparkle);
+  sparkle.addEventListener("animationend", () => sparkle.remove());
+}
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  setInterval(createSparkle, 900);
+}
+
+// Keep every supplied photo sharp, centered and responsive in its frame.
+function setupInvitationImages() {
+  const images = document.querySelectorAll(".school-logo-wrapper img, .invitation-sash-block img, .sash-decoration-wrapper img, .sash-photo img, .filmstrip-item img");
+
+  images.forEach((image) => {
+    image.loading = "lazy";
+    image.addEventListener("load", () => {
+      image.classList.add("image-ready");
+      if (image.naturalWidth > image.naturalHeight * 1.35) {
+        image.style.objectPosition = "center center";
+      }
+    }, { once: true });
+
+    image.addEventListener("error", () => {
+      image.classList.add("image-missing");
+    }, { once: true });
+  });
+
+  const interactiveCards = document.querySelectorAll(".school-invitation-card, .school-card-sweet, .sash-ribbon");
+  interactiveCards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      if (window.matchMedia("(max-width: 600px), (prefers-reduced-motion: reduce)").matches) return;
+      const bounds = card.getBoundingClientRect();
+      const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -3;
+      const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 3;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
+}
+
+setupInvitationImages();
+
 // ==========================================
 // RSVP FORM
 // ==========================================
