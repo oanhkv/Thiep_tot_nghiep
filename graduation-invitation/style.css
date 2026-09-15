@@ -147,6 +147,73 @@ section {
   backdrop-filter: blur(10px);
 }
 
+/* LOGO & SASH IMAGE LAYOUT */
+.section-school {
+  min-height: 88vh;
+}
+
+.sash-decoration-wrapper {
+  width: min(94vw, 760px);
+  height: min(80vh, 720px);
+  margin: auto;
+  opacity: 0.16;
+  overflow: hidden;
+}
+
+.sash-decoration-wrapper .sash-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: rotate(-3deg) scale(0.92);
+  transform-origin: center;
+  filter: drop-shadow(0 18px 28px rgba(22, 120, 184, 0.18));
+}
+
+.school-card-sweet {
+  width: min(100%, 430px);
+  padding: clamp(24px, 5vw, 40px) clamp(18px, 5vw, 32px);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(124, 207, 243, 0.38);
+  box-shadow: 0 24px 70px rgba(22, 120, 184, 0.16);
+}
+
+.school-logo-wrapper {
+  width: clamp(112px, 28vw, 156px);
+  height: clamp(112px, 28vw, 156px);
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.logo-circle-glow {
+  width: 100%;
+  height: 100%;
+  padding: clamp(8px, 2vw, 14px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffd4e5, #fff 48%, #ffe6f0);
+  box-shadow: 0 14px 34px rgba(196, 30, 106, 0.18), inset 0 0 0 5px rgba(255,255,255,0.8);
+  animation: logoBreathe 4s ease-in-out infinite;
+}
+
+.logo-circle-glow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+}
+
+@keyframes logoBreathe {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
 .school-container {
   text-align: center;
   max-width: 400px;
@@ -317,17 +384,25 @@ section {
 }
 
 .sash-photo {
-  width: 120px;
-  height: 150px;
-  border: 4px solid white;
+  width: clamp(132px, 42vw, 168px);
+  aspect-ratio: 4 / 5;
+  height: auto;
+  flex: 0 0 auto;
+  padding: 5px;
+  border: 0;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.2);
 }
 
 .sash-photo img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
+  border-radius: 10px;
 }
 
 .sash-info {
@@ -740,6 +815,10 @@ section {
     flex-direction: column;
     gap: 10px;
   }
+
+  .section-school { min-height: 680px; }
+  .sash-decoration-wrapper { height: 620px; }
+  .school-card-sweet { z-index: 2; }
 }
 
 @media (max-width: 480px) {
@@ -763,4 +842,821 @@ section {
   .countdown-item { padding: 20px 10px; }
   .countdown-value { font-size: 24px; }
   .countdown-label { font-size: 11px; }
+
+  .section-school { min-height: 620px; }
+  .sash-decoration-wrapper { width: 120vw; height: 520px; }
+  .school-card-sweet { width: min(92vw, 350px); padding: 24px 16px; }
+  .sash-photo { width: 124px; }
+}
+
+/* SKY BLUE MOTION THEME */
+:root {
+  --pink: #ff6b9d;
+  --dark-pink: #c41e6a;
+  --light-pink: #ffb3d9;
+  --gold: #d4af37;
+  --cream: #fffaf5;
+  --ink: #2d1b2e;
+  --muted: #8b7389;
+  --purple-light: #f5e6f9;
+  --purple-deep: #6b4c7a;
+}
+
+body {
+  background: linear-gradient(135deg, #fffaf5 0%, #f5e6f9 40%, #ffe6f0 100%);
+  background-attachment: fixed;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 36vw;
+  height: 36vw;
+  border-radius: 50%;
+  background: rgba(255, 107, 157, 0.15);
+  filter: blur(8px);
+  pointer-events: none;
+  animation: drift 16s ease-in-out infinite alternate;
+}
+
+body::before { top: -14vw; left: -12vw; }
+body::after { right: -14vw; bottom: -10vw; animation-delay: -7s; }
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(5vw, 4vh, 0) scale(1.18); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.55; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(48px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes gentleTilt {
+  0%, 100% { transform: rotate(-1deg) translateY(0); }
+  50% { transform: rotate(1deg) translateY(-10px); }
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(22, 120, 184, 0.16) 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: patternMove 24s linear infinite;
+}
+
+@keyframes patternMove {
+  to { background-position: 56px 56px; }
+}
+
+section, .main-footer { isolation: isolate; }
+
+.section-intro,
+.section-name,
+.section-event,
+.section-rsvp,
+.section-closing {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,230,249,0.9));
+}
+
+.section-school,
+.section-gallery,
+.section-countdown { background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,230,242,0.8)); }
+
+.intro-content { animation: revealUp 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.title-main { text-shadow: 0 12px 28px rgba(196,30,106,0.15); }
+.school-logo, .name-decoration, .sash-icon { animation: gentleTilt 4s ease-in-out infinite; }
+
+.float-icon {
+  filter: drop-shadow(0 10px 12px rgba(196,30,106,0.15));
+  animation: float 5s ease-in-out infinite, shimmer 3s ease-in-out infinite;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(48px);
+  animation: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.filmstrip-wrapper,
+.sash-ribbon,
+.event-detail-item,
+.countdown-item,
+.rsvp-content {
+  border-color: rgba(196,30,106,0.2);
+  box-shadow: 0 22px 55px rgba(196,30,106,0.12);
+}
+
+.filmstrip-wrapper { border-color: var(--dark-pink); transform: rotate(-1deg); transition: transform 0.5s ease, box-shadow 0.5s ease; }
+.filmstrip-wrapper:hover { transform: rotate(0) translateY(-8px); box-shadow: 0 28px 65px rgba(196,30,106,0.2); }
+.filmstrip { background: #fff5f9; }
+.filmstrip-item { border-color: var(--sash-color); transition: transform 0.45s ease; }
+.filmstrip-item:hover { transform: translateY(-10px) rotate(2deg); }
+
+.sash-ribbon,
+.countdown-item,
+.btn-map,
+.btn-submit {
+  background: linear-gradient(135deg, #ff6b9d, #c41e6a);
+  box-shadow: 0 14px 30px rgba(196, 30, 106, 0.24);
+}
+
+.event-detail-item { background: rgba(255,107,157,0.08); border-left-color: var(--pink); transition: transform 0.3s ease, background 0.3s ease; }
+.event-detail-item:hover { transform: translateX(8px); background: rgba(255,107,157,0.15); }
+.form-group input, .form-group select, .form-group textarea { border-color: #ffb3d9; background: rgba(255,255,255,0.85); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255,107,157,0.15); }
+.wish-item { background: rgba(255,107,157,0.1); border-left-color: var(--pink); }
+.main-footer { background: rgba(196,30,106,0.06); }
+
+.sparkle {
+  position: fixed;
+  z-index: 1;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffd4e5;
+  box-shadow: 0 0 14px 4px rgba(255,107,157,0.8);
+  pointer-events: none;
+  animation: sparkleFall var(--duration) linear forwards;
+}
+
+@keyframes sparkleFall {
+  from { opacity: 0; transform: translate3d(0, -15px, 0) scale(0.5); }
+  15% { opacity: 1; }
+  to { opacity: 0; transform: translate3d(var(--drift), 105vh, 0) scale(1.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  .slide-up { opacity: 1; transform: none; }
+}
+
+/* BADGE & INTRO STYLES */
+.badge-sweet {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b9d, #c41e6a);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(196, 30, 106, 0.25);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.intro-text-soft {
+  font-size: 16px;
+  color: #6b4c7a;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.subtitle-text-cute {
+  font-size: 18px;
+  color: #c41e6a;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.title-main-girly {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 12vw, 72px);
+  color: #c41e6a;
+  margin: 20px 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sparkle-icon {
+  font-size: 32px;
+  animation: sparkleRotate 3s ease-in-out infinite;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+@keyframes sparkleRotate {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(12deg) scale(1.1); }
+}
+
+.scroll-hint-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-hint-bounce {
+  font-size: 24px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* INVITATION CARD ENHANCEMENTS */
+.school-invitation-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92)),
+    repeating-linear-gradient(135deg, rgba(196,30,106,0.05) 0 1px, transparent 1px 8px);
+  border-color: rgba(196, 30, 106, 0.15);
+  box-shadow: 0 24px 70px rgba(196, 30, 106, 0.12);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.school-invitation-card:hover {
+  box-shadow: 0 32px 85px rgba(196, 30, 106, 0.18);
+  transform: translateY(-4px);
+}
+
+.invitation-kicker {
+  color: #c41e6a !important;
+  background: linear-gradient(135deg, #ff6b9d, #c41e6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+
+/* SASH RIBBON LUXE */
+.sash-ribbon {
+  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));
+  border-color: rgba(196, 30, 106, 0.15);
+  box-shadow: 0 24px 70px rgba(196, 30, 106, 0.16),
+              inset 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.sash-top, .sash-bottom {
+  font-size: 28px;
+  animation: emojiFloat 3s ease-in-out infinite;
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* EVENT DETAILS CARD */
+.event-detail-item {
+  background: linear-gradient(135deg, rgba(255,107,157,0.06), rgba(255,107,157,0.03));
+  border-color: #ffb3d9;
+  border-left: 4px solid #ff6b9d;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.event-detail-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #ff6b9d, #c41e6a);
+  border-radius: 4px 0 0 4px;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.event-detail-item:hover::before {
+  transform: scaleY(1);
+}
+
+.event-detail-item:hover {
+  background: linear-gradient(135deg, rgba(255,107,157,0.12), rgba(255,107,157,0.08));
+  transform: translateX(8px);
+}
+
+/* COUNTDOWN ITEMS */
+.countdown-item {
+  background: linear-gradient(135deg, #ff6b9d, #c41e6a);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.countdown-item:hover::before {
+  left: 100%;
+}
+
+.countdown-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(196, 30, 106, 0.3);
+}
+
+/* BUTTON ENHANCEMENTS */
+.btn-submit, .btn-map {
+  background: linear-gradient(135deg, #ff6b9d, #c41e6a);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(196, 30, 106, 0.28);
+}
+
+.btn-submit::before, .btn-map::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-submit:active::before, .btn-map:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-submit:hover, .btn-map:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(196, 30, 106, 0.35);
+}
+
+/* GRADIENT DIVIDER */
+.invitation-rule {
+  background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+  height: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 26px auto 18px !important;
+  width: 120px;
+}
+
+.invitation-rule span {
+  color: #ff6b9d;
+  font-size: 14px;
+  padding: 0 8px;
+  background: linear-gradient(135deg, #f5e6f9, #fff);
+}
+
+/* REFINED PHOTO PRESENTATION */
+.section-school {
+  min-height: 78vh;
+  padding: 72px 20px;
+}
+
+.sash-decoration-wrapper {
+  width: min(38vw, 420px);
+  height: 92%;
+  right: 4%;
+  left: auto;
+  opacity: 0.1;
+  transform: rotate(8deg);
+}
+
+.sash-decoration-wrapper .sash-img {
+  transform: scale(0.86);
+}
+
+.school-card-sweet {
+  width: min(100%, 470px);
+  padding: 42px 34px 36px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(22, 120, 184, 0.16);
+  box-shadow: 0 22px 60px rgba(22, 120, 184, 0.14);
+}
+
+.school-logo-wrapper {
+  width: clamp(96px, 18vw, 128px);
+  height: clamp(96px, 18vw, 128px);
+  margin-bottom: 24px;
+}
+
+.logo-circle-glow {
+  padding: 10px;
+  box-shadow: 0 12px 30px rgba(22, 120, 184, 0.18), inset 0 0 0 4px #fff;
+}
+
+.school-name-soft {
+  color: var(--ink) !important;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(19px, 4vw, 25px) !important;
+  line-height: 1.35;
+}
+
+.school-program-cute {
+  color: var(--dark-pink) !important;
+  background: #effaff !important;
+  border-color: #c8edf9 !important;
+}
+
+.section-sash {
+  min-height: 82vh;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #f5e6f9 0%, #fff 52%, #ffe6f0 100%);
+}
+
+.sash-container {
+  width: min(100%, 410px);
+  max-width: 410px;
+}
+
+.sash-ribbon {
+  width: 100%;
+  min-height: 0;
+  padding: 28px 24px 32px;
+  gap: 22px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(22, 120, 184, 0.16);
+  box-shadow: 0 24px 70px rgba(22, 120, 184, 0.2);
+  clip-path: none;
+  transform: rotate(1deg);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.sash-ribbon:hover {
+  transform: rotate(0) translateY(-8px);
+  box-shadow: 0 30px 80px rgba(22, 120, 184, 0.26);
+}
+
+.sash-ribbon::before {
+  top: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(90deg, #ff6b9d, #c41e6a, #ff6b9d);
+  clip-path: none;
+}
+
+.sash-top, .sash-bottom {
+  color: var(--dark-pink);
+  font-size: 24px;
+}
+
+.sash-middle {
+  gap: 20px;
+}
+
+.sash-photo {
+  width: min(100%, 205px);
+  aspect-ratio: 4 / 5;
+  padding: 7px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(196, 30, 106, 0.18);
+}
+
+.sash-photo img {
+  border-radius: 12px;
+  object-position: center 20%;
+}
+
+.sash-info {
+  width: 100%;
+  color: var(--ink);
+}
+
+.sash-label, .sash-label-2 {
+  color: var(--dark-pink);
+  letter-spacing: 2px;
+}
+
+.guest-name-input {
+  color: var(--ink);
+  background: #f2fbff;
+  border: 1px solid #a9dff2;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 10px 0 4px;
+}
+
+.guest-name-input::placeholder { color: #7babbf; }
+.guest-name-input:focus { border-color: var(--dark-pink); background: #fff; }
+
+@media (max-width: 600px) {
+  .section-school { min-height: 680px; padding: 54px 16px; }
+  .sash-decoration-wrapper { width: 72vw; height: 76%; right: -12%; opacity: 0.07; }
+  .school-card-sweet { padding: 34px 20px 30px; }
+  .section-sash { min-height: 700px; padding: 54px 16px; }
+  .sash-ribbon { padding: 26px 18px 30px; }
+}
+
+/* INVITATION CARD: LOGO LEFT, VERTICAL SASH RIGHT */
+.section-school {
+  min-height: 100vh;
+  padding: 56px 20px;
+  background: linear-gradient(135deg, #f5e6f9, #fff 58%, #ffe6f0);
+}
+
+.school-invitation-card {
+  position: relative;
+  width: min(100%, 430px);
+  min-height: 650px;
+  overflow: hidden;
+  padding: 34px 72px 44px 40px;
+  background:
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+    repeating-linear-gradient(135deg, rgba(22,120,184,0.08) 0 1px, transparent 1px 8px);
+  border: 1px solid rgba(22, 120, 184, 0.18);
+  box-shadow: 0 24px 70px rgba(22, 120, 184, 0.18);
+}
+
+.school-invitation-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(22, 120, 184, 0.16);
+  pointer-events: none;
+}
+
+.invitation-logo-block {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  transform: translateX(16px);
+}
+
+.school-logo-wrapper {
+  width: clamp(108px, 25vw, 124px);
+  height: clamp(108px, 25vw, 124px);
+  margin: 0 auto 14px;
+}
+
+.logo-circle-glow {
+  padding: 7px;
+  background: #fff;
+  box-shadow: none;
+  border: 2px solid rgba(22, 120, 184, 0.2);
+}
+
+.logo-circle-glow img {
+  border-radius: 50%;
+}
+
+.invitation-school-caption {
+  margin: 0;
+  color: #193f55;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(10px, 2.5vw, 13px);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.invitation-sash-block {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 14px;
+  width: 92px;
+  height: 76%;
+  overflow: hidden;
+  opacity: 1;
+  transform: none;
+}
+
+.invitation-sash-block::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.9));
+}
+
+.invitation-sash-block .sash-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  transform: none;
+  filter: drop-shadow(-5px 10px 9px rgba(22, 54, 70, 0.18));
+}
+
+.invitation-copy {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 142px;
+  text-align: center;
+}
+
+.invitation-greeting {
+  margin: 0 0 28px;
+  color: #273e4d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.invitation-kicker {
+  margin: 0 0 8px;
+  color: #177eb7;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.invitation-copy .school-name-soft {
+  margin: 0 auto;
+  max-width: 230px;
+  color: #163d55 !important;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(34px, 8vw, 48px) !important;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.invitation-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 110px;
+  margin: 26px auto 18px;
+  color: #1681bd;
+}
+
+.invitation-rule::before,
+.invitation-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #8dccE8;
+}
+
+.invitation-rule span { font-size: 12px; }
+
+.invitation-year {
+  margin: 0;
+  color: #668392;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .section-school { padding: 34px 12px; }
+  .school-invitation-card {
+    min-height: 590px;
+    padding: 28px 58px 34px 26px;
+  }
+  .school-invitation-card::before { inset: 8px; }
+  .invitation-logo-block { width: 100%; transform: translateX(16px); }
+  .invitation-sash-block { right: 8px; width: 72px; height: 72%; }
+  .invitation-copy { margin-top: 124px; }
+  .invitation-greeting { margin-bottom: 22px; font-size: 13px; }
+  .invitation-kicker { font-size: 16px; }
+}
+
+/* LARGER, BALANCED INVITATION FRAME */
+.school-invitation-card {
+  width: min(92vw, 520px);
+  min-height: clamp(650px, 88vh, 820px);
+  padding: 42px 92px 54px 50px;
+}
+
+.invitation-logo-block {
+  transform: translateX(21px);
+}
+
+.school-logo-wrapper {
+  width: clamp(148px, 25vw, 172px);
+  height: clamp(148px, 25vw, 172px);
+  margin-bottom: 18px;
+}
+
+.logo-circle-glow {
+  padding: 9px;
+  border-width: 2px;
+  background: #fff;
+}
+
+.logo-circle-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  image-rendering: auto;
+}
+
+.invitation-school-caption {
+  max-width: 250px;
+  margin: 0 auto;
+  font-size: clamp(11px, 2vw, 14px);
+  letter-spacing: 1.8px;
+}
+
+.invitation-sash-block {
+  right: 18px;
+  width: clamp(104px, 18vw, 128px);
+  height: 82%;
+}
+
+.invitation-copy {
+  margin-top: clamp(120px, 17vh, 160px);
+}
+
+@media (max-width: 600px) {
+  .school-invitation-card {
+    width: min(94vw, 480px);
+    min-height: 680px;
+    padding: 38px 76px 42px 30px;
+  }
+
+  .invitation-logo-block { transform: translateX(23px); }
+  .invitation-sash-block { right: 10px; width: 88px; height: 76%; }
+}
+
+@media (max-width: 480px) {
+  .school-invitation-card {
+    width: min(94vw, 420px);
+    min-height: 640px;
+    padding: 32px 64px 38px 24px;
+  }
+
+  .school-logo-wrapper {
+    width: 146px;
+    height: 146px;
+  }
+
+  .invitation-logo-block { transform: translateX(20px); }
+  .invitation-sash-block { right: 7px; width: 73px; height: 72%; }
+  .invitation-copy { margin-top: 118px; }
+}
+
+/* Logo không khung tròn, hiển thị lớn và rõ trên nền thiệp */
+.school-logo-wrapper {
+  width: clamp(178px, 34vw, 220px);
+  height: clamp(128px, 24vw, 166px);
+  margin: 0 auto 20px;
+}
+
+.logo-circle-glow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  animation: none;
+}
+
+.logo-circle-glow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+
+@media (max-width: 480px) {
+  .school-logo-wrapper {
+    width: min(74vw, 210px);
+    height: 142px;
+  }
 }

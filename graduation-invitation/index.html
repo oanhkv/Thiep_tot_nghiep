@@ -13,44 +13,79 @@
 </head>
 <body>
   <main>
-    <!-- SECTION 1: INTRO -->
-    <section class="section-intro">
-      <div class="intro-content fade-in">
-        <p class="intro-text">Bạn được mời tham dự</p>
-        <h1 class="title-main">Lễ Tốt Nghiệp</h1>
-        <p class="subtitle-text">của</p>
-        <div class="scroll-hint">↓ Scroll xuống ↓</div>
-      </div>
-      <div class="floating-elements">
-        <span class="float-icon">🎓</span>
-        <span class="float-icon">✨</span>
-        <span class="float-icon">💝</span>
-      </div>
-    </section>
+   <!-- SECTION 1: INTRO -->
+  <section class="section-intro relative overflow-hidden text-center py-16">
+    <!-- Hiệu ứng nền nhẹ nhàng -->
+    <div class="sparkle-background"></div>
 
-    <!-- SECTION 2: LOGO & TRƯỜNG -->
-    <section class="section-school slide-up">
-      <div class="school-container">
-        <div class="school-logo">🎓</div>
-        <h2 class="school-name">Đại Học Công Nghệ Đông Á</h2>
-        <p class="school-program">Kỹ Sư Công Nghệ Thông Tin</p>
+    <div class="intro-content fade-in space-y-4">
+      <span class="badge-sweet">✨ Special Moment ✨</span>
+      <p class="intro-text-soft">Trân trọng kính mời bạn ghé thăm & chia vui tại</p>
+      
+      <h1 class="title-main-girly">
+        Lễ Tốt Nghiệp 
+        <span class="sparkle-icon">🌸</span>
+      </h1>
+      
+      <p class="subtitle-text-cute">của cô gái nhỏ</p>
+      
+      <!-- Scroll hint mềm mại hơn -->
+      <div class="scroll-hint-wrapper mt-8">
+        <p class="text-xs text-pink-400 mb-1 font-medium">Vuốt nhẹ xuống nhé</p>
+        <div class="scroll-hint-bounce">💖</div>
       </div>
-    </section>
+    </div>
 
+    <!-- Floating Icons: Graduation theme -->
+    <div class="floating-elements pointer-events-none">
+      <span class="float-icon float-delay-1">🎓</span>
+      <span class="float-icon float-delay-2">✨</span>
+      <span class="float-icon float-delay-3">🌺</span>
+      <span class="float-icon float-delay-4">👑</span>
+      <span class="float-icon" style="animation-delay: 1s;">📜</span>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LOGO & TRƯỜNG -->
+  <section class="section-school slide-up">
+    <div class="school-invitation-card">
+      <div class="invitation-logo-block">
+        <div class="school-logo-wrapper">
+          <div class="logo-circle-glow">
+            <img src="./assets/logo.png" alt="Logo trường" />
+          </div>
+        </div>
+        <p class="invitation-school-caption">ĐẠI HỌC CÔNG NGHỆ ĐÔNG Á</p>
+      </div>
+
+      <div class="invitation-sash-block" aria-hidden="true">
+        <img src="eaut_sash.png" alt="" class="sash-img" />
+      </div>
+
+      <div class="invitation-copy">
+        <p class="invitation-greeting">Trân trọng kính mời bạn đến dự</p>
+        <p class="invitation-kicker">✨ Lễ Tốt Nghiệp ✨</p>
+        <h2 class="school-name-soft">Tân Kỹ Sư Công Nghệ Thông Tin</h2>
+        <div class="invitation-rule"><span>✦</span></div>
+        <p class="invitation-year">Graduation Ceremony 2026 🎓</p>
+      </div>
+    </div>
+  </section>
     <!-- SECTION 3: TÊN NGƯỜI TỐT NGHIỆP -->
     <section class="section-name slide-up">
       <div class="name-container">
-        <div class="name-decoration">✦</div>
+        <div class="name-decoration">👑</div>
         <h2 class="graduate-name-large">Vũ Kiều Oanh</h2>
-        <div class="name-decoration">✦</div>
+        <div class="name-decoration">👑</div>
       </div>
-      <p class="year-text">Khóa 2022 - 2026</p>
+      <p class="year-text">✨ Khóa 2022 - 2026 ✨</p>
+      <p style="text-align: center; font-size: 13px; color: #c41e6a; margin-top: 15px; letter-spacing: 1px;">Tân Kỹ Sư Công Nghệ Thông Tin</p>
     </section>
 
     <!-- SECTION 4: GALLERY ẢNH (FILMSTRIP) -->
     <section class="section-gallery slide-up">
       <div class="gallery-container">
-        <div class="gallery-label">Kỷ Niệm</div>
+        <div class="gallery-label">📸 Kỷ Niệm Đẹp 📸</div>
         <div class="filmstrip-wrapper">
           <div class="filmstrip">
             <div class="filmstrip-item">
@@ -72,7 +107,7 @@
       <div class="sash-container">
         <div class="sash-ribbon">
           <div class="sash-top">
-            <span class="sash-icon">🎓</span>
+            <span class="sash-icon">👑</span>
           </div>
           <div class="sash-middle">
             <div class="sash-photo">
@@ -196,8 +231,10 @@
     <!-- SECTION 9: CLOSING -->
     <section class="section-closing slide-up">
       <div class="closing-content">
-        <p class="closing-quote">"Một chương thanh xuân khép lại,<br>một hành trình mới bắt đầu."</p>
-        <p class="closing-text">Hẹn gặp bạn ngày 03/10/2026! 🎓✨</p>
+        <p class="closing-quote">"Một chương thanh xuân khép lại,<br>một hành trình mới lừng lẫy bắt đầu."</p>
+        <div style="margin: 30px 0; font-size: 28px;">👑 ✨ 🎓</div>
+        <p class="closing-text">Hẹn gặp bạn lúc 13:30 – 14:30, Thứ Bảy 03/10/2026!</p>
+        <p style="margin-top: 20px; font-size: 14px; color: #8b7389;">Sự hiện diện của bạn là niềm vui to lớn nhất của tôi! 💖</p>
       </div>
     </section>
 
